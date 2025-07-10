@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Joyeuse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <nav>
+      <div class="logo">Joyeuse</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1sPoYgYq1XzSggNMVkdevz5nje_deVhH0/view?usp=sharing" target="_blank">Resume</a></li>
+        <li><button id="theme-toggle">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Projects Section -->
+  <main class="projects">
+    <h2> My Data Projects</h2>
+
+    <div class="project-card">
+      <h3>Adult Income Dataset Analysis</h3>
+      <p>This project analyzes the 1994 U.S. Census dataset to explore the relationship between individual demographics and income levels. It includes data preprocessing, exploratory data analysis (EDA), and insights generation through visualization.</p>
+      <p><strong>Objective:</strong> Understand socioeconomic patterns that influence income using statistical summaries and visual analytics.</p>
+      <a href="https://github.com/JoyeuseNiwe/Adult_income" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Streaming Service Data Analysis & Dashboard</h3>
+      <p>This project involves analyzing data from a video streaming platform, focusing on user engagement, content preferences, and revenue trends. It includes visualizations such as watch time by genre, device usage patterns, and monthly revenue evolution.</p>
+      <p><strong>Objective:</strong> Empower decision-makers with a comprehensive dashboard built in Plotly Dash to optimize content strategy, enhance user retention, and identify revenue opportunities.</p>
+      <a href="https://github.com/JoyeuseNiwe/Streaming-service-data" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Travel Demand with Amadeus API</h3>
+      <p>This project integrates real-time flight data from the Amadeus API to assess global travel demand to key tech cities. It uses Python to collect, clean, and visualize insights using charts and summary statistics.</p>
+      <p><strong>Objective:</strong> Help travel agencies or startups track demand patterns for strategic market entry or promotional targeting.</p>
+      <a href="https://github.com/JoyeuseNiwe/Travel-demand" target="_blank">View on GitHub</a>
+    </div>
+  </main>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      html.setAttribute("data-theme", savedTheme);
+      toggleBtn.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+    }
+    toggleBtn.addEventListener("click", () => {
+      const current = html.getAttribute("data-theme");
+      const newTheme = current === "dark" ? "light" : "dark";
+      html.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      toggleBtn.textContent = newTheme === "dark" ? "☀️" : "🌙";
+    });
+  </script>
+
+</body>
+</html>

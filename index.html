@@ -1,48 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Joyeuse Niwe - Portfolio</title>
+  <title>Joyeuse | Data Scientist Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-  <h1>Joyeuse Niwe</h1>
-  <p>Data Analyst Portfolio</p>
-</header>
+  <!-- Header Navigation -->
+  <header>
+    <nav>
+      <div class="logo">Joyeuse</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1sPoYgYq1XzSggNMVkdevz5nje_deVhH0/view?usp=sharing" target="_blank">Resume</a></li>
+        <li><button id="theme-toggle">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a statistics student passionate about data analysis, visualization, and data-driven storytelling.
-    I enjoy turning complex datasets into clear insights.
-  </p>
-</section>
+  <!-- Main Section -->
+  <main class="home">
+    <div class="intro-section row-layout">
+      
+      <!-- Left side: Photo -->
+      <div class="photo-left">
+        <img src="images/Joxy.jpg" alt="Joyeuse Photo" class="profile-img" />
+      </div>
 
-<section id="projects">
-  <h2>Projects</h2>
+      <!-- Right side: Bio and content -->
+      <div class="bio-text">
+        <h2>Hi, I'm <span class="highlight">Joyeuse Niwemufasha</span> 👋</h2>
 
-  <div class="project">
-    <h3><a href="https://github.com/JoyeuseNiwe/Adult_income" target="_blank" rel="noopener noreferrer">Adult Income Dataset Analysis</a></h3>
-    <p>Analysis of income data to predict salary levels using statistical and machine learning methods.</p>
-  </div>
+        <p>
+          I am a passionate aspiring Data Scientist with a strong foundation in statistics, programming, and data analysis.
+          Currently pursuing a Bachelor's degree in Statistics, I have gained hands-on experience with Python, R, SQL, and
+          data visualization tools through real-world projects and intensive training.
+        </p>
 
-  <div class="project">
-    <h3><a href="https://github.com/JoyeuseNiwe/Streaming-service-data" target="_blank" rel="noopener noreferrer">Streaming Service Data Dashboard</a></h3>
-    <p>Interactive dashboard visualizing streaming data trends, viewer behavior, and content analysis.</p>
-  </div>
+        <p>
+          My goal is to use data-driven insights to solve real-world problems and support strategic decision-making.
+          I enjoy exploring datasets, conducting statistical analysis, and building impactful visual dashboards.
+        </p>
 
-  <div class="project">
-    <h3><a href="https://github.com/JoyeuseNiwe/Travel-demand" target="_blank" rel="noopener noreferrer">Travel Demand Analysis</a></h3>
-    <p>Analyzing travel patterns and flight data using Amadeus API to understand travel demand dynamics.</p>
-  </div>
-</section>
+        <!-- Skills Highlights -->
+        <section class="skills">
+          <h3>Key Skills</h3>
+          <ul>
+            <li>Python (pandas, NumPy, scikit-learn, matplotlib, seaborn)</li>
+            <li>R (tidyverse, ggplot2, caret)</li>
+            <li>SQL & Relational Databases</li>
+            <li>Data Visualization (Plotly Dash, Power BI)</li>
+            <li>Data Cleaning, EDA, Statistical Analysis</li>
+            <li>Excel, SPSS, LaTeX</li>
+          </ul>
+        </section>
 
-<footer>
-  <p>Contact me: joyeuse.email@example.com</p>
-</footer>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-block">
+          <h3>Contact Me</h3>
+          <p>Email: <a href="mailto:joyeuseniwe7@gmail.com">joyeuseniwe7@gmail.com</a></p>
+          <p>Phone: +250 780 962 526</p>
+          <p>Location: Kigali, Rwanda</p>
+        </section>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://github.com/JoyeuseNiwe" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/joyeuse-niwemufasha-4a477223a/" target="_blank">LinkedIn</a>
+          <a href="projects.html">Projects</a>
+        </div>
+
+        <!-- Resume Button -->
+        <a href="https://drive.google.com/file/d/1sPoYgYq1XzSggNMVkdevz5nje_deVhH0/view?usp=sharing" target="_blank" class="btn-resume">View My Resume</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      html.setAttribute("data-theme", savedTheme);
+      toggleBtn.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+    }
+    toggleBtn.addEventListener("click", () => {
+      const current = html.getAttribute("data-theme");
+      const newTheme = current === "dark" ? "light" : "dark";
+      html.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      toggleBtn.textContent = newTheme === "dark" ? "☀️" : "🌙";
+    });
+  </script>
 
 </body>
 </html>
